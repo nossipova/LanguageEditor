@@ -16,9 +16,85 @@
 		38B90C1B17DD2097004C78D6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C1A17DD2097004C78D6 /* Default.png */; };
 		38B90C1D17DD2097004C78D6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C1C17DD2097004C78D6 /* Default@2x.png */; };
 		38B90C1F17DD2097004C78D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C1E17DD2097004C78D6 /* Default-568h@2x.png */; };
-		38B90C2217DD2097004C78D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C2117DD2097004C78D6 /* ViewController.m */; };
-		38B90C2517DD2097004C78D6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C2317DD2097004C78D6 /* ViewController.xib */; };
+		38B90C2217DD2097004C78D6 /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C2117DD2097004C78D6 /* EditorViewController.m */; };
+		38B90C2517DD2097004C78D6 /* EditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C2317DD2097004C78D6 /* EditorViewController.xib */; };
+		38B90C3117DD21A7004C78D6 /* Library.parsergen in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C2E17DD21A7004C78D6 /* Library.parsergen */; };
+		38B90C5117DD222A004C78D6 /* libParseKitMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C4617DD2202004C78D6 /* libParseKitMobile.a */; };
+		38B90C5317DD2277004C78D6 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C5217DD2277004C78D6 /* libicucore.dylib */; };
+		38B90C5A17DD4829004C78D6 /* LibraryAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C5917DD4828004C78D6 /* LibraryAssembler.m */; };
+		38B90C5D17DD4A63004C78D6 /* LibraryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C5C17DD4A63004C78D6 /* LibraryParser.m */; };
+		38BA217817E50E0F008E6FFE /* LibraryTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BA217717E50E0E008E6FFE /* LibraryTemplates.m */; };
+		38BA217B17E5203F008E6FFE /* LibraryGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BA217A17E5203F008E6FFE /* LibraryGenerator.m */; };
+		38C6365917E6453900135B6E /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6365417E6453900135B6E /* Author.m */; };
+		38C6365A17E6453900135B6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6365617E6453900135B6E /* Book.m */; };
+		38C6365B17E6453900135B6E /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6365817E6453900135B6E /* Library.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38B90C3F17DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = ParseKit;
+		};
+		38B90C4117DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3F8A48D175817DF00056188;
+			remoteInfo = PEGKit;
+		};
+		38B90C4317DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3D9753216E7F36700D55EAB;
+			remoteInfo = libParseKit;
+		};
+		38B90C4517DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3FDC5830FFC4BFC00F1F797;
+			remoteInfo = libParseKitMobile;
+		};
+		38B90C4717DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D37D8DC61571A4F700CDB822;
+			remoteInfo = ParseKitTests;
+		};
+		38B90C4917DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D33494100E2963FD00406085;
+			remoteInfo = DemoApp;
+		};
+		38B90C4B17DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D34185040E520D3F0081B0DC;
+			remoteInfo = DebugApp;
+		};
+		38B90C4D17DD2202004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D338302F171C923700CCE513;
+			remoteInfo = ParserGenApp;
+		};
+		38B90C4F17DD2223004C78D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D3FDC5820FFC4BFC00F1F797;
+			remoteInfo = libParseKitMobile;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		38B90C0517DD2097004C78D6 /* LanguageEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,9 +110,26 @@
 		38B90C1A17DD2097004C78D6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		38B90C1C17DD2097004C78D6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		38B90C1E17DD2097004C78D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		38B90C2017DD2097004C78D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		38B90C2117DD2097004C78D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		38B90C2417DD2097004C78D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		38B90C2017DD2097004C78D6 /* EditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditorViewController.h; sourceTree = "<group>"; };
+		38B90C2117DD2097004C78D6 /* EditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditorViewController.m; sourceTree = "<group>"; };
+		38B90C2417DD2097004C78D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EditorViewController.xib; sourceTree = "<group>"; };
+		38B90C2E17DD21A7004C78D6 /* Library.parsergen */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Library.parsergen; sourceTree = "<group>"; };
+		38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ParseKit.xcodeproj; path = ParseKit/ParseKit.xcodeproj; sourceTree = "<group>"; };
+		38B90C5217DD2277004C78D6 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		38B90C5817DD4828004C78D6 /* LibraryAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryAssembler.h; sourceTree = "<group>"; };
+		38B90C5917DD4828004C78D6 /* LibraryAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryAssembler.m; sourceTree = "<group>"; };
+		38B90C5B17DD4A63004C78D6 /* LibraryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryParser.h; sourceTree = "<group>"; };
+		38B90C5C17DD4A63004C78D6 /* LibraryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryParser.m; sourceTree = "<group>"; };
+		38BA217617E50E0E008E6FFE /* LibraryTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryTemplates.h; sourceTree = "<group>"; };
+		38BA217717E50E0E008E6FFE /* LibraryTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryTemplates.m; sourceTree = "<group>"; };
+		38BA217917E5203F008E6FFE /* LibraryGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryGenerator.h; sourceTree = "<group>"; };
+		38BA217A17E5203F008E6FFE /* LibraryGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryGenerator.m; sourceTree = "<group>"; };
+		38C6365317E6453900135B6E /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		38C6365417E6453900135B6E /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
+		38C6365517E6453900135B6E /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		38C6365617E6453900135B6E /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		38C6365717E6453900135B6E /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		38C6365817E6453900135B6E /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B90C5317DD2277004C78D6 /* libicucore.dylib in Frameworks */,
+				38B90C5117DD222A004C78D6 /* libParseKitMobile.a in Frameworks */,
 				38B90C0917DD2097004C78D6 /* UIKit.framework in Frameworks */,
 				38B90C0B17DD2097004C78D6 /* Foundation.framework in Frameworks */,
 				38B90C0D17DD2097004C78D6 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +151,7 @@
 		38B90BFC17DD2097004C78D6 = {
 			isa = PBXGroup;
 			children = (
+				38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */,
 				38B90C0E17DD2097004C78D6 /* LanguageEditor */,
 				38B90C0717DD2097004C78D6 /* Frameworks */,
 				38B90C0617DD2097004C78D6 /* Products */,
@@ -73,6 +169,7 @@
 		38B90C0717DD2097004C78D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38B90C5217DD2277004C78D6 /* libicucore.dylib */,
 				38B90C0817DD2097004C78D6 /* UIKit.framework */,
 				38B90C0A17DD2097004C78D6 /* Foundation.framework */,
 				38B90C0C17DD2097004C78D6 /* CoreGraphics.framework */,
@@ -85,9 +182,18 @@
 			children = (
 				38B90C1717DD2097004C78D6 /* AppDelegate.h */,
 				38B90C1817DD2097004C78D6 /* AppDelegate.m */,
-				38B90C2017DD2097004C78D6 /* ViewController.h */,
-				38B90C2117DD2097004C78D6 /* ViewController.m */,
-				38B90C2317DD2097004C78D6 /* ViewController.xib */,
+				38B90C2017DD2097004C78D6 /* EditorViewController.h */,
+				38B90C2117DD2097004C78D6 /* EditorViewController.m */,
+				38B90C2317DD2097004C78D6 /* EditorViewController.xib */,
+				38B90C5817DD4828004C78D6 /* LibraryAssembler.h */,
+				38B90C5917DD4828004C78D6 /* LibraryAssembler.m */,
+				38BA217917E5203F008E6FFE /* LibraryGenerator.h */,
+				38BA217A17E5203F008E6FFE /* LibraryGenerator.m */,
+				38BA217617E50E0E008E6FFE /* LibraryTemplates.h */,
+				38BA217717E50E0E008E6FFE /* LibraryTemplates.m */,
+				38B90C2D17DD21A7004C78D6 /* Language */,
+				38C6365217E6453900135B6E /* Templates */,
+				38C6364817E62DE200135B6E /* Generated */,
 				38B90C0F17DD2097004C78D6 /* Supporting Files */,
 			);
 			path = LanguageEditor;
@@ -107,6 +213,51 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		38B90C2D17DD21A7004C78D6 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				38B90C5B17DD4A63004C78D6 /* LibraryParser.h */,
+				38B90C5C17DD4A63004C78D6 /* LibraryParser.m */,
+				38B90C2E17DD21A7004C78D6 /* Library.parsergen */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		38B90C3417DD2201004C78D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38B90C4017DD2202004C78D6 /* ParseKit.framework */,
+				38B90C4217DD2202004C78D6 /* PEGKit.framework */,
+				38B90C4417DD2202004C78D6 /* libParseKit.a */,
+				38B90C4617DD2202004C78D6 /* libParseKitMobile.a */,
+				38B90C4817DD2202004C78D6 /* ParseKitTests.octest */,
+				38B90C4A17DD2202004C78D6 /* DemoApp.app */,
+				38B90C4C17DD2202004C78D6 /* DebugApp.app */,
+				38B90C4E17DD2202004C78D6 /* ParserGenApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38C6364817E62DE200135B6E /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		38C6365217E6453900135B6E /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				38C6365317E6453900135B6E /* Author.h */,
+				38C6365417E6453900135B6E /* Author.m */,
+				38C6365517E6453900135B6E /* Book.h */,
+				38C6365617E6453900135B6E /* Book.m */,
+				38C6365717E6453900135B6E /* Library.h */,
+				38C6365817E6453900135B6E /* Library.m */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,6 +272,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				38B90C5017DD2223004C78D6 /* PBXTargetDependency */,
 			);
 			name = LanguageEditor;
 			productName = LanguageEditor;
@@ -146,12 +298,77 @@
 			mainGroup = 38B90BFC17DD2097004C78D6;
 			productRefGroup = 38B90C0617DD2097004C78D6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 38B90C3417DD2201004C78D6 /* Products */;
+					ProjectRef = 38B90C3317DD2201004C78D6 /* ParseKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				38B90C0417DD2097004C78D6 /* LanguageEditor */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		38B90C4017DD2202004C78D6 /* ParseKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ParseKit.framework;
+			remoteRef = 38B90C3F17DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4217DD2202004C78D6 /* PEGKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PEGKit.framework;
+			remoteRef = 38B90C4117DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4417DD2202004C78D6 /* libParseKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libParseKit.a;
+			remoteRef = 38B90C4317DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4617DD2202004C78D6 /* libParseKitMobile.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libParseKitMobile.a;
+			remoteRef = 38B90C4517DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4817DD2202004C78D6 /* ParseKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ParseKitTests.octest;
+			remoteRef = 38B90C4717DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4A17DD2202004C78D6 /* DemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DemoApp.app;
+			remoteRef = 38B90C4917DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4C17DD2202004C78D6 /* DebugApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DebugApp.app;
+			remoteRef = 38B90C4B17DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38B90C4E17DD2202004C78D6 /* ParserGenApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ParserGenApp.app;
+			remoteRef = 38B90C4D17DD2202004C78D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		38B90C0317DD2097004C78D6 /* Resources */ = {
@@ -162,7 +379,8 @@
 				38B90C1B17DD2097004C78D6 /* Default.png in Resources */,
 				38B90C1D17DD2097004C78D6 /* Default@2x.png in Resources */,
 				38B90C1F17DD2097004C78D6 /* Default-568h@2x.png in Resources */,
-				38B90C2517DD2097004C78D6 /* ViewController.xib in Resources */,
+				38B90C2517DD2097004C78D6 /* EditorViewController.xib in Resources */,
+				38B90C3117DD21A7004C78D6 /* Library.parsergen in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,11 +393,26 @@
 			files = (
 				38B90C1517DD2097004C78D6 /* main.m in Sources */,
 				38B90C1917DD2097004C78D6 /* AppDelegate.m in Sources */,
-				38B90C2217DD2097004C78D6 /* ViewController.m in Sources */,
+				38B90C2217DD2097004C78D6 /* EditorViewController.m in Sources */,
+				38B90C5A17DD4829004C78D6 /* LibraryAssembler.m in Sources */,
+				38B90C5D17DD4A63004C78D6 /* LibraryParser.m in Sources */,
+				38BA217817E50E0F008E6FFE /* LibraryTemplates.m in Sources */,
+				38BA217B17E5203F008E6FFE /* LibraryGenerator.m in Sources */,
+				38C6365917E6453900135B6E /* Author.m in Sources */,
+				38C6365A17E6453900135B6E /* Book.m in Sources */,
+				38C6365B17E6453900135B6E /* Library.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38B90C5017DD2223004C78D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libParseKitMobile;
+			targetProxy = 38B90C4F17DD2223004C78D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		38B90C1117DD2097004C78D6 /* InfoPlist.strings */ = {
@@ -190,12 +423,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		38B90C2317DD2097004C78D6 /* ViewController.xib */ = {
+		38B90C2317DD2097004C78D6 /* EditorViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				38B90C2417DD2097004C78D6 /* en */,
 			);
-			name = ViewController.xib;
+			name = EditorViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -262,7 +495,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LanguageEditor/LanguageEditor-Prefix.pch";
+				HEADER_SEARCH_PATHS = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit/include;
 				INFOPLIST_FILE = "LanguageEditor/LanguageEditor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -273,7 +512,13 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LanguageEditor/LanguageEditor-Prefix.pch";
+				HEADER_SEARCH_PATHS = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit/include;
 				INFOPLIST_FILE = "LanguageEditor/LanguageEditor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,6 +543,7 @@
 				38B90C2A17DD2097004C78D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

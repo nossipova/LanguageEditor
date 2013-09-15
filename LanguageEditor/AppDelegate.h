@@ -6,14 +6,12 @@
 //  Copyright (c) 2013 Natalia Ossipova. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@class ViewController;
+@class EditorViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) EditorViewController *viewController;
 
 @end
