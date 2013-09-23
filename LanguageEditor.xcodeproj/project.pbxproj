@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		382370A517F0C54D001A3B97 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C5217DD2277004C78D6 /* libicucore.dylib */; };
 		38B90C0917DD2097004C78D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C0817DD2097004C78D6 /* UIKit.framework */; };
 		38B90C0B17DD2097004C78D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C0A17DD2097004C78D6 /* Foundation.framework */; };
 		38B90C0D17DD2097004C78D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C0C17DD2097004C78D6 /* CoreGraphics.framework */; };
@@ -20,7 +21,6 @@
 		38B90C2517DD2097004C78D6 /* EditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C2317DD2097004C78D6 /* EditorViewController.xib */; };
 		38B90C3117DD21A7004C78D6 /* Library.parsergen in Resources */ = {isa = PBXBuildFile; fileRef = 38B90C2E17DD21A7004C78D6 /* Library.parsergen */; };
 		38B90C5117DD222A004C78D6 /* libParseKitMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C4617DD2202004C78D6 /* libParseKitMobile.a */; };
-		38B90C5317DD2277004C78D6 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B90C5217DD2277004C78D6 /* libicucore.dylib */; };
 		38B90C5A17DD4829004C78D6 /* LibraryAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C5917DD4828004C78D6 /* LibraryAssembler.m */; };
 		38B90C5D17DD4A63004C78D6 /* LibraryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C5C17DD4A63004C78D6 /* LibraryParser.m */; };
 		38BA217817E50E0F008E6FFE /* LibraryTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BA217717E50E0E008E6FFE /* LibraryTemplates.m */; };
@@ -137,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38B90C5317DD2277004C78D6 /* libicucore.dylib in Frameworks */,
+				382370A517F0C54D001A3B97 /* libicucore.dylib in Frameworks */,
 				38B90C5117DD222A004C78D6 /* libParseKitMobile.a in Frameworks */,
 				38B90C0917DD2097004C78D6 /* UIKit.framework in Frameworks */,
 				38B90C0B17DD2097004C78D6 /* Foundation.framework in Frameworks */,
@@ -287,6 +287,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Natalia Ossipova";
+				TargetAttributes = {
+					38B90C0417DD2097004C78D6 = {
+						DevelopmentTeam = 7K9NCDFPG2;
+					};
+				};
 			};
 			buildConfigurationList = 38B90C0017DD2097004C78D6 /* Build configuration list for PBXProject "LanguageEditor" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -459,7 +464,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -483,7 +488,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -493,16 +498,19 @@
 		38B90C2917DD2097004C78D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LanguageEditor/LanguageEditor-Prefix.pch";
 				HEADER_SEARCH_PATHS = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit/include;
 				INFOPLIST_FILE = "LanguageEditor/LanguageEditor-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -510,16 +518,19 @@
 		38B90C2A17DD2097004C78D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LanguageEditor/LanguageEditor-Prefix.pch";
 				HEADER_SEARCH_PATHS = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit/include;
 				INFOPLIST_FILE = "LanguageEditor/LanguageEditor-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
