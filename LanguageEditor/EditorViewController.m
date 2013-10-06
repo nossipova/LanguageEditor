@@ -52,6 +52,7 @@
         }
         self.outputView.text = @"";
     } else {
+//        self.outputView.text = [NSString stringWithFormat:@"%@", result.stack];
         NSError * error = nil;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:model options:NSJSONWritingPrettyPrinted error:&error];
         self.outputView.text = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];

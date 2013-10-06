@@ -25,9 +25,6 @@
 		38B90C5D17DD4A63004C78D6 /* LibraryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B90C5C17DD4A63004C78D6 /* LibraryParser.m */; };
 		38BA217817E50E0F008E6FFE /* LibraryTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BA217717E50E0E008E6FFE /* LibraryTemplates.m */; };
 		38BA217B17E5203F008E6FFE /* LibraryGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BA217A17E5203F008E6FFE /* LibraryGenerator.m */; };
-		38C6365917E6453900135B6E /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6365417E6453900135B6E /* Author.m */; };
-		38C6365A17E6453900135B6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6365617E6453900135B6E /* Book.m */; };
-		38C6365B17E6453900135B6E /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C6365817E6453900135B6E /* Library.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,12 +121,6 @@
 		38BA217717E50E0E008E6FFE /* LibraryTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryTemplates.m; sourceTree = "<group>"; };
 		38BA217917E5203F008E6FFE /* LibraryGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryGenerator.h; sourceTree = "<group>"; };
 		38BA217A17E5203F008E6FFE /* LibraryGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryGenerator.m; sourceTree = "<group>"; };
-		38C6365317E6453900135B6E /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
-		38C6365417E6453900135B6E /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
-		38C6365517E6453900135B6E /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
-		38C6365617E6453900135B6E /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
-		38C6365717E6453900135B6E /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
-		38C6365817E6453900135B6E /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,8 +183,6 @@
 				38BA217617E50E0E008E6FFE /* LibraryTemplates.h */,
 				38BA217717E50E0E008E6FFE /* LibraryTemplates.m */,
 				38B90C2D17DD21A7004C78D6 /* Language */,
-				38C6365217E6453900135B6E /* Templates */,
-				38C6364817E62DE200135B6E /* Generated */,
 				38B90C0F17DD2097004C78D6 /* Supporting Files */,
 			);
 			path = LanguageEditor;
@@ -236,26 +225,6 @@
 				38B90C4E17DD2202004C78D6 /* ParserGenApp.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		38C6364817E62DE200135B6E /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Generated;
-			sourceTree = "<group>";
-		};
-		38C6365217E6453900135B6E /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				38C6365317E6453900135B6E /* Author.h */,
-				38C6365417E6453900135B6E /* Author.m */,
-				38C6365517E6453900135B6E /* Book.h */,
-				38C6365617E6453900135B6E /* Book.m */,
-				38C6365717E6453900135B6E /* Library.h */,
-				38C6365817E6453900135B6E /* Library.m */,
-			);
-			path = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,9 +372,6 @@
 				38B90C5D17DD4A63004C78D6 /* LibraryParser.m in Sources */,
 				38BA217817E50E0F008E6FFE /* LibraryTemplates.m in Sources */,
 				38BA217B17E5203F008E6FFE /* LibraryGenerator.m in Sources */,
-				38C6365917E6453900135B6E /* Author.m in Sources */,
-				38C6365A17E6453900135B6E /* Book.m in Sources */,
-				38C6365B17E6453900135B6E /* Library.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +468,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LanguageEditor/LanguageEditor-Prefix.pch";
-				HEADER_SEARCH_PATHS = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit/include;
+				HEADER_SEARCH_PATHS = ./ParseKit/include;
 				INFOPLIST_FILE = "LanguageEditor/LanguageEditor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
@@ -522,7 +488,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LanguageEditor/LanguageEditor-Prefix.pch";
-				HEADER_SEARCH_PATHS = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit/include;
+				HEADER_SEARCH_PATHS = ./ParseKit/include;
 				INFOPLIST_FILE = "LanguageEditor/LanguageEditor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (

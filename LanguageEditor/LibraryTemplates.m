@@ -233,7 +233,6 @@
     [result appendString:@"    }\n"];
     [result appendString:@"    return self;\n"];
     [result appendString:@"}\n"];
-    NSLog(@"RESULT: %@", result);
     return result;
 }
 
