@@ -1,0 +1,34 @@
+start = library;
+
+library = books;
+
+books = book+;
+
+book =
+	bookToken title
+		authorsToken authors
+		isbnToken isbn
+		chapters
+	endToken;
+
+bookToken = 'book';
+
+title = QuotedString;
+
+authorsToken = 'authors';
+authors = author (',' author)*;
+
+author = firstname lastname;
+firstname = Word;
+lastname = Word;
+
+isbnToken = 'ISBN';
+isbn = Number;
+
+chapters = chapter+;
+
+chapter = chapterToken text;
+chapterToken = 'chapter';
+text = QuotedString;
+
+endToken = 'end';

@@ -17,8 +17,7 @@
 
 @implementation LibraryGenerator
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         _templates = [LibraryTemplates new];
@@ -26,12 +25,11 @@
     return self;
 }
 
-- (void)generate:(NSDictionary *)model
-{
+- (void)generate:(NSDictionary *)model {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
 
-//    NSLog(@"Document directory: %@", documentDirectory);
+    NSLog(@"Document directory: %@", documentDirectory);
 
     NSSet *classNames = [self classNamesFromModel:model];
 
@@ -51,8 +49,7 @@
     }
 }
 
-- (NSSet *)classNamesFromModel:(NSDictionary *)model
-{
+- (NSSet *)classNamesFromModel:(NSDictionary *)model {
     NSMutableSet *classNames = [NSMutableSet new];
     if ([model isKindOfClass:[NSDictionary class]]) {
         for (NSString *key in [model allKeys]) {
@@ -70,8 +67,7 @@
     return classNames;
 }
 
-- (NSArray *)objectsWithClassName:(NSString *)className model:(NSDictionary *)model
-{
+- (NSArray *)objectsWithClassName:(NSString *)className model:(NSDictionary *)model {
     NSMutableArray *objects = [@[] mutableCopy];
     if ([model isKindOfClass:[NSDictionary class]]) {
         for (NSString *key in [model allKeys]) {
@@ -88,6 +84,5 @@
     }
     return objects;
 }
-
 
 @end

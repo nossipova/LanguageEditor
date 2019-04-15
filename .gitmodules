@@ -1,3 +1,3 @@
-[submodule "ParseKit"]
-	path = ParseKit
-	url = /Users/nossipova/Documents/Presentations/Macoun/Demos/LanguageEditor/ParseKit
+[submodule "PEGKit"]
+	path = PEGKit
+	url = https://github.com/itod/pegkit.git

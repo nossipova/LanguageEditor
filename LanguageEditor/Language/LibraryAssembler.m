@@ -29,8 +29,7 @@ NSString * const LELastNameToken = @"lastName";
 
 @implementation LibraryAssembler
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         _model = [@{} mutableCopy];
@@ -38,29 +37,25 @@ NSString * const LELastNameToken = @"lastName";
     return self;
 }
 
-- (void)parser:(PKParser *)parser didMatchLibrary:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchLibrary:(PKAssembly *)assembly {
 //    NSLog(@"Library: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchBooks:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchBooks:(PKAssembly *)assembly {
 //    NSLog(@"Books: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchBook:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchBook:(PKAssembly *)assembly {
 //    NSLog(@"Book: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchBookToken:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchBookToken:(PKAssembly *)assembly {
 //    NSLog(@"Book token: %@", [assembly.stack lastObject]);
 
     NSMutableDictionary *library = self.model[LELibraryToken];
@@ -75,43 +70,37 @@ NSString * const LELastNameToken = @"lastName";
     self.currentBook = book[LEBookToken];
 }
 
-- (void)parser:(PKParser *)parser didMatchTitleToken:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchTitleToken:(PKAssembly *)assembly {
 //    NSLog(@"Title token: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchTitle:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchTitle:(PKAssembly *)assembly {
 //    NSLog(@"Title: %@", [assembly.stack lastObject]);
 
     self.currentBook[LETitleToken] = [[[assembly.stack lastObject] stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\""]];
 }
 
-- (void)parser:(PKParser *)parser didMatchAuthorsToken:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchAuthorsToken:(PKAssembly *)assembly {
 //    NSLog(@"Author token: %@", [assembly.stack lastObject]);
 
     self.currentBook[LEAuthorsToken] = [@[] mutableCopy];
 }
 
-- (void)parser:(PKParser *)parser didMatchAuthor:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchAuthor:(PKAssembly *)assembly {
 //    NSLog(@"Author: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchAuthors:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchAuthors:(PKAssembly *)assembly {
 //    NSLog(@"Authors: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchFirstName:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchFirstname:(PKAssembly *)assembly {
 //    NSLog(@"Firstname: %@", [assembly.stack lastObject]);
 
     NSString *firstName = [[assembly.stack lastObject] stringValue];
@@ -122,8 +111,7 @@ NSString * const LELastNameToken = @"lastName";
     authors[[authors count]] = author;
 }
 
-- (void)parser:(PKParser *)parser didMatchLastName:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchLastname:(PKAssembly *)assembly {
 //    NSLog(@"Lastname: %@", [assembly.stack lastObject]);
 
     NSString *lastName = [[assembly.stack lastObject] stringValue];
@@ -131,43 +119,37 @@ NSString * const LELastNameToken = @"lastName";
     author[LEAuthorToken][LELastNameToken] = lastName;
 }
 
-- (void)parser:(PKParser *)parser didMatchIsbnToken:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchIsbnToken:(PKAssembly *)assembly {
 //    NSLog(@"ISBN token: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchIsbn:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchIsbn:(PKAssembly *)assembly {
 //    NSLog(@"ISBN: %@", [assembly.stack lastObject]);
 
     self.currentBook[LEISBNToken] = [[assembly.stack lastObject] stringValue];
 }
 
-- (void)parser:(PKParser *)parser didMatchChapters:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchChapters:(PKAssembly *)assembly {
 //    NSLog(@"Chapters: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchChapter:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchChapter:(PKAssembly *)assembly {
 //    NSLog(@"Chapter: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchChapterToken:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchChapterToken:(PKAssembly *)assembly {
 //    NSLog(@"Chapter token: %@", [assembly.stack lastObject]);
 
     // nothing to do
 }
 
-- (void)parser:(PKParser *)parser didMatchText:(PKAssembly *)assembly
-{
+- (void)parser:(PKParser *)parser didMatchText:(PKAssembly *)assembly {
 //    NSLog(@"Text: %@", [assembly.stack lastObject]);
 
     NSMutableArray *chapters = self.currentBook[LEChaptersToken];

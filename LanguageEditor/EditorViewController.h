@@ -8,11 +8,10 @@
 
 @interface EditorViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIControl *view;
 @property (nonatomic, strong) IBOutlet UITextView *inputView;
 @property (nonatomic, strong) IBOutlet UITextView *outputView;
 
--(IBAction)backgroundTap:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
 - (IBAction)generate:(id)sender;
 
 @end

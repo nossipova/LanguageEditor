@@ -13,33 +13,30 @@
 
 @implementation EditorViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.inputView.text = @"";
     self.outputView.text = @"";
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
--(IBAction)backgroundTap:(id)sender {
+- (IBAction)backgroundTap:(id)sender {
     [self.inputView resignFirstResponder];
 }
 
-- (IBAction)generate:(id)sender
-{
+- (IBAction)generate:(id)sender {
     [self.inputView resignFirstResponder];
 
     NSString *input = self.inputView.text;
 
-    LibraryParser *parser = [LibraryParser new];
     LibraryAssembler *assembler = [LibraryAssembler new];
+    LibraryParser *parser = [[LibraryParser alloc] initWithDelegate:assembler];
     NSError *error = nil;
-    PKAssembly *result = [parser parseString:input assembler:assembler error:&error];
+    PKAssembly *result = [parser parseString:input error:&error];
 
     NSDictionary *model = assembler.model;
     
@@ -52,10 +49,7 @@
         }
         self.outputView.text = @"";
     } else {
-//        self.outputView.text = [NSString stringWithFormat:@"%@", result.stack];
-        NSError * error = nil;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:model options:NSJSONWritingPrettyPrinted error:&error];
-        self.outputView.text = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        self.outputView.text = [NSString stringWithFormat:@"%@", result.stack];
     }
 }
 

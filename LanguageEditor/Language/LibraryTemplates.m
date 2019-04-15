@@ -11,6 +11,7 @@
 @interface LibraryTemplates ()
 
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSDateFormatter *yearFormatter;
 @property (strong, nonatomic) NSMutableSet *headerImports;
 @property (strong, nonatomic) NSMutableSet *implementationImports;
 
@@ -18,17 +19,23 @@
 
 @implementation LibraryTemplates
 
-- (NSString *)formatDate:(NSDate *)date
-{
-    if(!self.dateFormatter) {
+- (NSString *)formatDate:(NSDate *)date {
+    if (!self.dateFormatter) {
         self.dateFormatter = [NSDateFormatter new];
         [self.dateFormatter setDateFormat:@"dd.MM.yyyy"];
     }
     return [self.dateFormatter stringFromDate:date];
 }
 
-- (NSString *)headerWithClassName:(NSString *)className model:(NSDictionary *)model;
-{
+- (NSString *)formatYear:(NSDate *)date {
+    if (!self.yearFormatter) {
+        self.yearFormatter = [NSDateFormatter new];
+        [self.yearFormatter setDateFormat:@"yyyy"];
+    }
+    return [self.yearFormatter stringFromDate:date];
+}
+
+- (NSString *)headerWithClassName:(NSString *)className model:(NSDictionary *)model; {
     self.headerImports = [NSMutableSet new];
     self.implementationImports = [NSMutableSet new];
     
@@ -47,8 +54,7 @@
     return result;
 }
 
-- (NSString *)implementationWithClassName:(NSString *)className model:(NSDictionary *)model;
-{
+- (NSString *)implementationWithClassName:(NSString *)className model:(NSDictionary *)model; {
     self.implementationImports = [NSMutableSet new];
 
     NSString *classNameCapitalized = [className capitalizedString];
@@ -68,8 +74,7 @@
     return result;
 }
 
-- (NSString *)implementationInitMethodWithClassName:(NSString *)className model:(NSDictionary *)model
-{
+- (NSString *)implementationInitMethodWithClassName:(NSString *)className model:(NSDictionary *)model {
     self.implementationImports = [NSMutableSet new];
 
     NSString *classNameCapitalized = [className capitalizedString];
@@ -91,22 +96,20 @@
     return result;
 }
 
-- (NSString *)commentsWithFilename:(NSString *)filename
-{
+- (NSString *)commentsWithFilename:(NSString *)filename {
     NSMutableString *result = [NSMutableString new];
     [result appendString:@"//\n"];
     [result appendFormat:@"//  %@\n", filename];
     [result appendString:@"//  LanguageEditor\n"];
     [result appendString:@"//\n"];
     [result appendFormat:@"//  Created by Natalia Ossipova on %@.\n", [self formatDate:[NSDate date]]];
-    [result appendString:@"//  Copyright (c) 2013 Natalia Ossipova. All rights reserved.\n"];
+    [result appendFormat:@"//  Copyright (c) %@ Natalia Ossipova. All rights reserved.\n", [self formatYear:[NSDate date]]];
     [result appendString:@"//\n"];
     [result appendString:@"\n"];
     return result;
 }
 
-- (NSString *)headerPropertiesWithModel:(NSDictionary *)model
-{
+- (NSString *)headerPropertiesWithModel:(NSDictionary *)model {
     NSMutableString *result = [NSMutableString new];
     NSArray *allKeys = [model allKeys];
     for (NSString *key in allKeys) {
@@ -122,13 +125,12 @@
     return result;
 }
 
-- (NSString *)headerArrayMethodsWithModel:(NSDictionary *)model
-{
+- (NSString *)headerArrayMethodsWithModel:(NSDictionary *)model {
     NSMutableString *result = [NSMutableString new];
     NSArray *allKeys = [model allKeys];
     for (NSString *key in allKeys) {
         id value = model[key];
-        if ([value isKindOfClass:[NSArray class]]) {
+        if ([value isKindOfClass:[NSArray class]] && ((NSArray *)value).count > 0) {
             id object = value[0];
             if ([object isKindOfClass:[NSDictionary class]]) {
                 NSString *className = [object allKeys][0];
@@ -144,13 +146,12 @@
     return result;
 }
 
-- (NSString *)implementationArrayMethodsWithModel:(NSDictionary *)model
-{
+- (NSString *)implementationArrayMethodsWithModel:(NSDictionary *)model {
     NSMutableString *result = [NSMutableString new];
     NSArray *allKeys = [model allKeys];
     for (NSString *key in allKeys) {
         id value = model[key];
-        if ([value isKindOfClass:[NSArray class]]) {
+        if ([value isKindOfClass:[NSArray class]] && ((NSArray *)value).count > 0) {
             id object = value[0];
             NSString *className;
             if ([result length] > 0) {
@@ -176,8 +177,7 @@
     return result;
 }
 
-- (NSString *)implementationClassExtensionWithClassName:(NSString *)className model:(NSDictionary *)model
-{
+- (NSString *)implementationClassExtensionWithClassName:(NSString *)className model:(NSDictionary *)model {
     NSMutableString *result = [NSMutableString new];
     NSArray *allKeys = [model allKeys];
     for (NSString *key in allKeys) {
@@ -199,8 +199,7 @@
 
 }
 
-- (NSString *)importStringWithImports:(NSSet *)imports
-{
+- (NSString *)importStringWithImports:(NSSet *)imports {
     NSMutableString *result = [NSMutableString new];
     for (NSString *import in imports) {
         [result appendFormat:@"#import \"%@.h\"\n", import];
@@ -211,8 +210,7 @@
     return result;
 }
 
-- (NSString *)implementationInitMethodWithModel:(NSDictionary *)model
-{
+- (NSString *)implementationInitMethodWithModel:(NSDictionary *)model {
     NSMutableString *result = [NSMutableString new];
     [result appendString:@"- (id)init\n"];
     [result appendString:@"{\n"];
@@ -224,7 +222,7 @@
         [result appendFormat:@"        _%@ = [@[] mutableCopy];\n", key];
         if ([object isKindOfClass:[NSArray class]]) {
             for (id value in object) {
-                NSString *suffix = [NSString stringWithFormat:@"%d", [(NSArray *)object indexOfObject:value]];
+                NSString *suffix = [NSString stringWithFormat:@"%lu", (unsigned long)[(NSArray *)object indexOfObject:value]];
                 [result appendString:[self implementationInitModel:value suffix:suffix]];
                 [result appendFormat:@"        _%@[[_%@ count]] = %@%@;\n", key, key, [key substringToIndex:[key length] - 1], suffix];
             }
@@ -236,8 +234,7 @@
     return result;
 }
 
-- (NSString *)implementationInitModel:(NSDictionary *)model suffix:(NSString *)suffix
-{
+- (NSString *)implementationInitModel:(NSDictionary *)model suffix:(NSString *)suffix {
     NSMutableString *result = [NSMutableString new];
     if ([model isKindOfClass:[NSDictionary class]]) {
         NSArray *allKeys = [model allKeys];
@@ -253,7 +250,7 @@
                     for (id value in attributeValue) {
                         NSString *attributeNameString = [[attributeName substringToIndex:[attributeName length] - 1] capitalizedString];
                         if ([value isKindOfClass:[NSDictionary class]]) {
-                            NSString *suffixInner = [NSString stringWithFormat:@"%@%d", suffix, [attributeValue indexOfObject:value]];
+                            NSString *suffixInner = [NSString stringWithFormat:@"%@%lu", suffix, (unsigned long)[attributeValue indexOfObject:value]];
                             [result appendString:[self implementationInitModel:value suffix:suffixInner]];
                             [result appendFormat:@"        [%@%@ add%@:%@%@];\n", className, suffix, attributeNameString, [attributeName substringToIndex:[attributeName length] - 1], suffixInner];
                         } else {
@@ -267,7 +264,7 @@
         }
     } else if ([model isKindOfClass:[NSArray class]]) {
         for (id object in model) {
-            [result appendString:[self implementationInitModel:object suffix:[NSString stringWithFormat:@"%d", [(NSArray *)model indexOfObject:object]]]];
+            [result appendString:[self implementationInitModel:object suffix:[NSString stringWithFormat:@"%lu", (unsigned long)[(NSArray *)model indexOfObject:object]]]];
         }
     }
     return result;
